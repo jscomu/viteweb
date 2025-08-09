@@ -10,6 +10,7 @@ function Layout() {
             <ul>
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="About">About</Link></li>
+                <li><Link to="Flag">국기</Link></li>
             </ul>
             <div>#</div>
         </nav>
