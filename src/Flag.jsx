@@ -35,7 +35,7 @@ function Flag() {
 
     return (
         <div className="container">
-            <div><h2>국기 맞추기</h2></div>
+            <div><h2>국기 게임</h2></div>
             <div><img src={"/img/" + String(num) + ".png"} /></div>
             <div>{count > 0 ? (correct ? '정답' : '오답') : '-' }</div>
             <div>횟수 : {count}</div>
