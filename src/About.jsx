@@ -1,3 +1,4 @@
+import './About.css';
 
 function About() {
   
@@ -10,9 +11,12 @@ function About() {
     }
     return (
       <>
-        <p>Hello About!</p>
-        <p><button onClick={btn1}>버튼111</button></p>
-        <p><button onClick={() => btn2()}>버튼222</button></p>
+        <div className='container'>
+          <ul>
+            <li><a href='https://timovite.netlify.app/' target='_blank'>JHS</a></li>
+            <li><a href='https://reavite.netlify.app/' target='_blank'>OBJ</a></li>
+          </ul>
+        </div>
       </>
     )
   }

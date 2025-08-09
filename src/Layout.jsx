@@ -9,7 +9,7 @@ function Layout() {
             <div className="tit">ExcitingCoding</div>
             <ul>
                 <li><Link to="/">Home</Link></li>
-                <li><Link to="About">About</Link></li>
+                <li><Link to="About">친구</Link></li>
                 <li><Link to="Flag">국기</Link></li>
             </ul>
             <div>#</div>
