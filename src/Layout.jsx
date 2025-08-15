@@ -11,6 +11,7 @@ function Layout() {
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="About">친구</Link></li>
                 <li><Link to="Flag">국기</Link></li>
+                <li><Link to="racing">레이싱게임</Link></li>
             </ul>
             <div>#</div>
         </nav>
