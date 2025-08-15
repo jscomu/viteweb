@@ -17,12 +17,44 @@
 }
 
 .car {
-  width: 30px;
-  height: 50px;
-  background-color: red;
+  width: 40px;
+  height: 60px;
+  background: #f44336;
   position: absolute;
   bottom: 10px;
   transform: translateX(-50%);
+  border-radius: 10px 10px 0 0;
+  transition: transform 0.1s ease-in-out;
+}
+
+.car.left {
+  transform: translateX(-50%) rotate(-15deg);
+}
+
+.car.right {
+  transform: translateX(-50%) rotate(15deg);
+}
+
+.car::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: -10px;
+  width: 10px;
+  height: 20px;
+  background: #2196f3;
+  border-radius: 5px 0 0 5px;
+}
+
+.car::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  right: -10px;
+  width: 10px;
+  height: 20px;
+  background: #2196f3;
+  border-radius: 0 5px 5px 0;
 }
 
 .obstacle {
@@ -30,10 +62,29 @@
   height: 20px;
   background-color: blue;
   position: absolute;
+  animation: wobble 2s infinite;
+}
+
+@keyframes wobble {
+  0% { transform: translateX(0); }
+  15% { transform: translateX(-5px) rotate(-5deg); }
+  30% { transform: translateX(5px) rotate(5deg); }
+  45% { transform: translateX(-5px) rotate(-5deg); }
+  60% { transform: translateX(5px) rotate(5deg); }
+  75% { transform: translateX(-2px) rotate(-2deg); }
+  100% { transform: translateX(0); }
 }
 
 .game-over {
   position: absolute;
   color: white;
   text-align: center;
+}
+
+.time {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: white;
+  font-size: 24px;
 }

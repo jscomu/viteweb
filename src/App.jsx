@@ -5,6 +5,8 @@ import Home from "./Home";
 import About from "./About";
 import Flag from "./Flag";
 import RacingGame from "./RacingGame";
+import Lotto from "./Lotto";
+import SelfIntro from "./SelfIntro";
 
 function App() {
   
@@ -17,6 +19,8 @@ function App() {
             <Route path="About" element={<About />} />
             <Route path="Flag" element={<Flag />} />
             <Route path="racing" element={<RacingGame />} />
+            <Route path="lotto" element={<Lotto />} />
+            <Route path="intro" element={<SelfIntro />} />
           </Route>
         </Routes>
       </BrowserRouter>

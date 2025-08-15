@@ -1,25 +1,50 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './RacingGame.css';
 
 const RacingGame = () => {
   const [carPosition, setCarPosition] = useState(50);
   const [obstacles, setObstacles] = useState([]);
   const [gameOver, setGameOver] = useState(false);
+  const [carDirection, setCarDirection] = useState('');
+  const [time, setTime] = useState(0);
+  const timerRef = useRef(null);
 
   const handleKeyDown = (e) => {
     if (gameOver) return;
 
     if (e.key === 'ArrowLeft') {
       setCarPosition((prev) => Math.max(prev - 5, 0));
+      setCarDirection('left');
     } else if (e.key === 'ArrowRight') {
       setCarPosition((prev) => Math.min(prev + 5, 100));
+      setCarDirection('right');
     }
   };
+
+  const handleKeyUp = () => {
+    setCarDirection('');
+  };
+
+  const startGame = () => {
+    setGameOver(false);
+    setCarPosition(50);
+    setObstacles([]);
+    setTime(0);
+    timerRef.current = setInterval(() => {
+      setTime((prev) => prev + 1);
+    }, 1000);
+  };
+
+  useEffect(() => {
+    startGame();
+    return () => clearInterval(timerRef.current);
+  }, []);
 
   useEffect(() => {
     const gameInterval = setInterval(() => {
       if (gameOver) {
         clearInterval(gameInterval);
+        clearInterval(timerRef.current);
         return;
       }
 
@@ -55,15 +80,18 @@ const RacingGame = () => {
 
   useEffect(() => {
     window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('keyup', handleKeyUp);
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('keyup', handleKeyUp);
     };
   }, [gameOver]);
 
   return (
     <div className="game-container">
+      <div className="time">Time: {time}s</div>
       <div className="road">
-        <div className="car" style={{ left: `${carPosition}%` }} />
+        <div className={`car ${carDirection}`} style={{ left: `${carPosition}%` }} />
         {obstacles.map((obstacle, index) => (
           <div
             key={index}
@@ -75,11 +103,8 @@ const RacingGame = () => {
       {gameOver && (
         <div className="game-over">
           <h2>Game Over</h2>
-          <button onClick={() => {
-            setGameOver(false);
-            setCarPosition(50);
-            setObstacles([]);
-          }}>
+          <p>Your time: {time}s</p>
+          <button onClick={startGame}>
             Restart
           </button>
         </div>
