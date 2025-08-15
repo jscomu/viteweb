@@ -7,6 +7,7 @@ import Flag from "./Flag";
 import RacingGame from "./RacingGame";
 import Lotto from "./Lotto";
 import SelfIntro from "./SelfIntro";
+import Floating from "./Floating";
 
 function App() {
   
@@ -23,6 +24,7 @@ function App() {
             <Route path="intro" element={<SelfIntro />} />
           </Route>
         </Routes>
+        <Floating />
       </BrowserRouter>
     </>
   )

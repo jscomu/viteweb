@@ -1,0 +1,39 @@
+
+.ft_container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.togbtn {
+    border: none;
+    padding: 15px;
+    background-color: yellow;
+    color: blue;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+.ft_container .togbtn:hover {
+    background-color: green;
+    color: whitesmoke;
+}
+
+.noti {
+    width: 300px;
+    max-height: 400px;
+    overflow-y: auto;
+    background-color: beige;
+    border: 1px solid rgb(210, 207, 207);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    position: absolute;
+    right: 0;
+    bottom: 50px;
+    box-shadow: 0 4px 12px rgb(179, 178, 178);
+    transition: opacity 1s ease;
+}
+.noti.hidden {
+    opacity: 0;
+}

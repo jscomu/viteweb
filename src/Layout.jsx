@@ -6,7 +6,7 @@ function Layout() {
     return (
       <div>
         <nav>
-            <div className="tit">ExcitingCoding</div>
+            <div className="tit">React Study</div>
             <ul>
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="About">친구</Link></li>
