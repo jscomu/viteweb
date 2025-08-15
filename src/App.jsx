@@ -8,6 +8,7 @@ import RacingGame from "./RacingGame";
 import Lotto from "./Lotto";
 import SelfIntro from "./SelfIntro";
 import Floating from "./Floating";
+import Pacman from "./Pacman";
 
 function App() {
   
@@ -22,6 +23,7 @@ function App() {
             <Route path="racing" element={<RacingGame />} />
             <Route path="lotto" element={<Lotto />} />
             <Route path="intro" element={<SelfIntro />} />
+            <Route path="pacman" element={<Pacman />} />
           </Route>
         </Routes>
         <Floating />

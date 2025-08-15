@@ -14,6 +14,7 @@ function Layout() {
                 <li><Link to="racing">레이싱게임</Link></li>
                 <li><Link to="lotto">로또</Link></li>
                 <li><Link to="intro">자기소개</Link></li>
+                <li><Link to="pacman">팩맨</Link></li>
             </ul>
             <div>#</div>
         </nav>
