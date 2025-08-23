@@ -1,0 +1,27 @@
+.unibox {
+    border: 0;
+    background: linear-gradient(to right, orange, beige);
+    margin: 60px auto;
+    padding: 20px;
+    max-width: 700px;
+}
+
+.unibox ul {
+    list-style: none;
+}
+
+.unibox li {
+    background-color: greenyellow;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 15px;
+}
+.unibox a {
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.unibox li:hover {
+    background-color: aqua;
+    transform: scale(1.03);
+    box-shadow: 5px 5px 1px green;
+}

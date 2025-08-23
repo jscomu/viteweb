@@ -9,6 +9,8 @@ import Lotto from "./Lotto";
 import SelfIntro from "./SelfIntro";
 import Floating from "./Floating";
 import Pacman from "./Pacman";
+import Univ from "./Univ";
+import Tetris from "./Tetris";
 
 function App() {
   
@@ -24,6 +26,8 @@ function App() {
             <Route path="lotto" element={<Lotto />} />
             <Route path="intro" element={<SelfIntro />} />
             <Route path="pacman" element={<Pacman />} />
+            <Route path="Univ" element={<Univ />} />
+            <Route path="tetris" element={<Tetris />} />
           </Route>
         </Routes>
         <Floating />
