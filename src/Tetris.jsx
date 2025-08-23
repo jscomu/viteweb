@@ -235,7 +235,7 @@ const Tetris = () => {
 
   return (
     <div className="tetris-container">
-        <h1>Tetris</h1>
+        <h1>테트리스 게임</h1>
         <div className="tetris-board">
             {renderBoard()}
         </div>
